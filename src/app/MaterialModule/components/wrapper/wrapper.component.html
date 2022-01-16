@@ -1,0 +1,269 @@
+<mat-toolbar>
+
+
+  <button mat-icon-button (click)="toggle()" type="checkbox"
+  class="button-setting">
+    <mat-icon>settings</mat-icon>
+    </button>
+
+    <button mat-icon-button (click)="toggleShowHelp()" type="checkbox"
+    class="button-help">
+      <mat-icon>help</mat-icon>
+      </button>
+
+      <button mat-icon-button (click)="toggleShowMsg()" type="checkbox"
+      class="button-msg">
+        <mat-icon>question_answer</mat-icon>
+        </button>
+
+        <button mat-icon-button (click)="toggle()" type="checkbox"
+        class="button-search">
+          <mat-icon>search</mat-icon>
+          </button>
+    
+          <mat-accordion>
+            <mat-expansion-panel (opened)="panelState=true" (closed)="panelState=false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  <mat-icon>account_circle</mat-icon> <p>user name</p>
+                </mat-panel-title>
+              </mat-expansion-panel-header>
+              </mat-expansion-panel>
+              </mat-accordion>
+
+            
+          <button mat-icon-button (click)="isExpanded = !isExpanded">
+            <mat-icon class="sidenav-button">
+            menu</mat-icon>
+            </button>
+
+
+          <mat-icon class="logo">
+
+          </mat-icon>
+
+
+  
+
+
+</mat-toolbar>
+
+<mat-divider class="under-toolbar"></mat-divider>
+
+<mat-sidenav-container autosize>
+
+  <mat-sidenav #sidenav mode="side" opened="true">
+
+    <mat-nav-list>
+
+      <mat-list-item>
+        <mat-icon class="filter-logo" *ngIf="!isExpanded"></mat-icon>
+
+        <span *ngIf="isExpanded">
+          <label class="label_search">
+        <input type="text" placeholder="filter Navigator" class="input-header">
+        </label>
+        </span>
+      </mat-list-item>
+
+      <mat-list-item *ngIf="!isExpanded"></mat-list-item>
+
+      <span *ngIf="isExpanded" class="item-list">
+
+        <div class="mat-icon" [class.showClass]="classToggledMain" (click)="togglemain()">
+
+          <mat-icon class="main-svg"></mat-icon>
+
+        </div>
+
+        <div class="mat-icon" [class.showClass]="classToggledMain2" (click)="togglemain2()">
+
+          <mat-icon class="main-svg2"></mat-icon>
+
+        </div>
+
+        <div class="mat-icon" [class.showClass]="classToggledMain3" (click)="togglemain3()">
+
+          <mat-icon class="main-svg3"></mat-icon>
+
+        </div>
+     
+    </span>
+
+    
+    <div class="list-item-icon" *ngIf="mainIsShown">
+
+      <div *ngFor="let nlink of navLinks; let i=index" [routerLink]="nlink.linkNav" class="main-list-item"
+      [class.showMainList]="nlink.status" (click)="togglemainList(i)">
+
+        <mat-icon>{{nlink.iconNav}}</mat-icon>
+
+        <span *ngIf="isExpanded">
+          {{nlink.nameNav}}
+          <!-- <mat-icon class="star" *ngif="starBorderShown" (click)="starBorder()">{{nlink.starNav}}</mat-icon> -->
+          <mat-icon class="star">{{nlink.starNav}}</mat-icon>
+          <!-- <mat-icon class="star1" *ngif="starShown" (click)="star()">{{nlink.starNav1}}</mat-icon> -->
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="list-item-icon" *ngIf="main2IsShown">
+
+      <div *ngFor="let nlink2 of navLinks2; let i=index" [routerLink]="nlink2.linkNav" class="main-list-item"
+      [class.showMainList]="nlink2.status" (click)="togglemain2List(i)">
+
+        <mat-icon>{{nlink2.iconNav}}</mat-icon>
+
+        <span *ngIf="isExpanded">
+          {{nlink2.nameNav}}
+          <!-- <mat-icon class="star" *ngif="starBorderShown1" (click)="starBorder1()">{{nlink2.starNav}}</mat-icon> -->
+          <mat-icon class="star1">{{nlink2.starNav}}</mat-icon>
+          <!-- <mat-icon class="star1" *ngif="starShown1" (click)="star1()">{{nlink2.starNav1}}</mat-icon> -->
+
+        </span>
+
+      </div>
+
+    </div>
+
+
+    <div class="list-item-icon" *ngIf="main3IsShown">
+
+      <mat-list-item>
+
+      </mat-list-item>
+    </div>
+
+
+    </mat-nav-list>
+    
+    <!-- <mat-nav-list>
+
+      <mat-list-item [routerLink]="'dashboard'">
+        <mat-icon mat-list-icon >home</mat-icon>
+        <span *ngIf="isExpanded">Dashboard</span>
+      </mat-list-item>
+
+      <mat-list-item [routerLink]="'info'">
+        <mat-icon mat-list-icon>important_devices</mat-icon>
+        <span *ngIf="isExpanded">Info</span>
+      </mat-list-item>
+
+      <mat-list-item [routerLink]="'user'">
+        <mat-icon mat-list-icon>supervisor_account</mat-icon>
+        <span *ngIf="isExpanded">User</span>
+      </mat-list-item>
+
+    </mat-nav-list> -->
+  </mat-sidenav>
+
+
+  <div class="main-content">
+
+    <router-outlet></router-outlet>
+
+  </div>
+
+  <div class="help-content" *ngIf="helpIsShown" id="helpShowned">
+    <div class="help-header">
+      <mat-icon class="help-logo">help</mat-icon>
+      <h4>Help</h4>
+    </div>
+    <mat-icon class="help-content-logo"></mat-icon>
+  </div>
+
+  <div class="msg-content" *ngIf="msgIsShown" id="msgShowned">
+
+    <div class="msg-header">
+
+      <label class="label_search-msg">
+
+        <input type="text" placeholder="Search Conversations" class="input_header-msg">
+
+        </label>
+
+        <div *ngFor="let user of userMenu" class="user-msg" (click)="toggleShowMsgs()">
+          <mat-icon>{{user.icon}}</mat-icon>
+          <span>{{user.name}}</span>
+          <div [class]="user.color"></div>
+        </div>
+
+      </div>
+
+  </div>
+
+
+  <div class="msgs-content" *ngIf="msgsIsShown" id="msgsShowned">
+
+    <div class="msgs-header">
+
+      <div class="user-msgs">
+
+        <mat-icon>account_circle</mat-icon>
+
+        <span>user name</span>
+
+        <mat-icon class="close" (click)="toggleCloseMsgs()">close</mat-icon>
+
+      </div>
+
+      <mat-divider></mat-divider>
+
+    </div>
+
+    <div class="msgs-page">
+
+    <div *ngFor="let msg of msgs">
+
+        <mat-icon [ngStyle]="{'color': msg.color, 'position': msg.position, 'left':msg.right, 'padding-bottom':'.2em'}">{{msg.icon}}</mat-icon>
+
+    <div
+    [ngStyle]="{'background-color': msg.backgroundColor, 'width':msg.width, 'height':msg.height,
+     'margin-bottom':msg.marginBottom,'border-radius':msg.borderRadius, 'margin-left':msg.marginLeft
+    ,'margin-right': msg.marginRight,'margin-top':msg.marginTop}">
+    </div>
+
+    </div>
+
+    <label class="label-send">
+
+    <input type="text" class="msgs-footer" placeholder="Aa...">
+
+    </label>
+    
+  </div>
+
+  </div>
+
+  <main *ngIf="router.url == '/'">
+
+    <div *ngFor="let card of cards" class="card">
+
+      <div style="width: 15%;">
+      <mat-icon class="mat">{{card.icon}}</mat-icon>
+ 
+      </div>
+      <div style="width: 100%;">
+        <h1 [ngStyle]="{'color': card.color}" class="h1">{{card.header}}</h1>
+      <p class="p">{{card.text}}</p>
+      </div>
+    </div>
+
+  </main>
+
+
+
+</mat-sidenav-container>
+
+
+<mat-divider class="before-footer"></mat-divider>
+
+<footer>
+
+    <p>Gyoumou.Cloud
+    </p>
+    
+  </footer>

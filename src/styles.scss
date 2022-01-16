@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+$navBarColor:#a4226f;
+
+$sideNavColor:#912069;
+
+$iconColor:#fff;
+
+$hoverBarIcon: #7d1e62;
+
+$number: 10px;
+
+@font-face {
+    font-family: NotoBold;
+    src: url(assets/fonts/NotoSansJP-Bold.otf) format("opentype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: NotoReg;
+    src: url(assets/fonts/NotoSansJP-Regular.otf) format("opentype");
+    font-display: swap;
+}
+
+@font-face {
+    font-family: NotoMed;
+    src: url(assets/fonts/NotoSansJP-Medium.otf) format("opentype");
+    font-display: swap;
+}
+
+html, body { height: 100%; }
+body { margin: 0; 
+ }

@@ -1,0 +1,121 @@
+@import '../../../../styles.scss';
+
+table {
+    width: 100%;
+    height: 450px;
+
+    & th{
+        background-color: #f7f7f7;
+        font-size: 14px;
+        font-family: NotoBold;
+    }
+
+    & td{
+        font-size: 14px;
+        font-family: NotoMed;
+    }
+  }
+  
+  ::ng-deep .mat-ink-bar{
+    background-color:$navBarColor !important;
+  }
+
+  .icon{
+      margin-right: 8px;
+      color: $navBarColor;
+  }
+
+  .p{
+      margin-top: .8em;
+    color: $navBarColor;
+    font-size: 14px;
+    font-family: NotoBold;
+  }
+
+  .add-button{
+    position: absolute;
+    top: .3em;
+    right: 23.5em;
+    cursor: pointer;
+    border-radius: 1.5em;
+    color: $iconColor;
+    border: none;
+    background-color: green;
+    width: 8em;
+    height: 3em;
+    font-size: 13px;
+    font-family: NotoBold;
+  }
+
+  .invite-button{
+    position: absolute;
+    top: .3em;
+    right: 14.5em;
+    cursor: pointer;
+    border-radius: 1.5em;
+    color: black;
+    border: none;
+    background-color: #ffb74d;
+    width: 8em;
+    height: 3em;
+    font-size: 13px;
+    font-family: NotoBold;
+  }
+
+  .select{
+    position: absolute;
+    top: .4em;
+    right: 8.5em;
+    cursor: pointer;
+    border-radius: 1.5em;
+    width: 3em;
+    height: 2em;
+    border:.2em solid black;
+    font-weight: bold;
+    padding-left: 11px;
+    padding-top: 3px;
+  }
+
+  .search-logo{
+    position: absolute;
+    top: .5em;
+    right: 3em;
+  }
+
+  .print-logo{
+    position: absolute;
+    top: .5em;
+    right: .5em;
+  }
+
+  .excel-logo{
+    position: absolute;
+    top: .5em;
+    right: 1.7em;
+    background: url("../../../svg/excel.svg") center / contain no-repeat;
+  }
+
+  .no-data-logo{
+    background: url("../../../svg/no-data.svg") center / contain no-repeat;
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    margin-left: .3em;
+    transform: translate(-50%,-50%);
+    width: 50%;
+    height: 30%;
+  }
+  
+  .text-no-data{
+    position: absolute;
+    margin: auto;
+    margin-top: 4em;
+    margin-left: -.2em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 24px;
+    font-family: NotoReg;
+    color: #e5e5e5;
+  }

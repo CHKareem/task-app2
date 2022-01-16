@@ -1,0 +1,581 @@
+@import '../../../../styles.scss';
+
+mat-sidenav-container {
+  height: 88.8%;
+
+  // mat-sidenav {
+
+  //   mat-nav-list {
+
+  //     .chevron-button {
+  //       transition: 300ms ease-in-out;
+  //       transform: rotate(0deg);
+  //       right: 0;
+  //       float: right;
+  //       position: absolute;
+  //     }
+
+  //     .chevron-button.rotated {
+  //       transform: rotate(180deg);
+  //     }
+  //   }
+  // }
+}
+
+mat-nav-list{
+  // max-width: 300px;
+   max-height: 432px;
+  & span{
+    color:$iconColor;
+  }
+}
+
+mat-sidenav{
+  background-color: $sideNavColor;
+  min-width: 34px;
+  // max-width: 300px;
+  height: 1004px;
+}
+
+mat-icon{
+  color: $iconColor;
+}
+
+.star{
+  position: absolute;
+  right: .5em;
+&:hover{
+  color: yellow;
+  cursor: pointer;
+  }
+}
+
+.star1{
+  position: absolute;
+  right: .5em;
+  color: yellow;
+  cursor: pointer;
+}
+
+mat-list-item{
+
+  // &:hover{
+  //   color: $hoverBarIcon;
+  // }
+
+  & .input-header{
+    outline: none;
+    border-width: .11em;
+    border-color: white;
+    border-radius: 1.5em;
+    width: 90px;
+    height: 15px;
+    font-size: 16px;
+    font-family: NotoMed;
+    color:$iconColor;
+    background-color: $sideNavColor;
+    padding: 13px 109px 13px 17px;
+    margin-top: .3em;
+    font-display: -10em;
+  }
+
+  input[type="text"]::placeholder { 
+    position: relative;
+    left: 1.3em;
+    color:$iconColor;
+    font-size: 12px;
+    font-family: NotoMed;
+  }
+
+}
+
+.label_search {
+  position: relative;
+}
+
+.label_search:before {
+  content: "";
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+  background: url("../../../svg/filter1.svg") center / contain no-repeat;
+}
+
+.logo{
+  position: relative;
+  left: -.5em;
+  width: 233px;
+  height: 45px;
+  background: url("../../../svg/logo.svg") center / contain no-repeat;
+}
+
+.help-content-logo{
+  width: 122px;
+  height: 122px;
+  padding: 21px 17px 13px 17px;
+  background: url("../../../svg/help-content.svg") center / contain no-repeat;
+  margin-top: 3em;
+  margin-left: 1em;
+}
+
+.filter-logo{
+  position: relative;
+  top: .3em;
+  left: 0em;
+  background: url("../../../svg/filter.svg") center / contain no-repeat;
+  color: #c48cb0;
+}
+
+mat-divider{
+  color: $iconColor;
+  background-color: $iconColor;
+}
+
+.item-list{
+
+margin-top: 1em;
+padding: 1px 0px 1px 0px;
+width: 66px;
+height: 300px;
+
+& .mat-icon{
+  
+  width: 83px;
+  height: 64px;
+  margin-left: .5em;
+  margin-bottom: 1em;
+  margin-top: 1em;
+
+  &:hover{
+    background-color: #7d1e62;
+    cursor: pointer;
+    }
+  }
+
+  & .main-svg{
+    content: "";
+    background: url("../../../svg/mainsvg.svg") center / contain no-repeat;
+    margin-left: 1.2em;
+    margin-top: .7em;
+    width: 28.51px;
+    height: 26.69px;
+  }
+  
+  & .main-svg2{
+    content: "";
+    background: url("../../../svg/mainsvg2.svg") center / contain no-repeat;
+    margin-left: 1.2em;
+    margin-top: .7em;
+    width: 28.51px;
+    height: 26.69px;
+  }
+  
+  & .main-svg3{
+    content: "";
+    background: url("../../../svg/mainsvg3.svg") center / contain no-repeat;
+    margin-left: 1.2em;
+    margin-top: .7em;
+    width: 28.51px;
+    height: 26.69px;
+  }
+
+}
+
+.main-list-item{
+  height: 40px;
+
+  &:hover{
+    background-color: #7d1e62;
+    cursor: pointer;
+    }
+
+  mat-icon{
+    margin-top: .3em;
+    margin-left: .7em;
+  }
+
+}
+
+p{
+  float: right;
+}
+
+.mat-toolbar{
+padding:79px 0px -7px 0px;
+background-color: $navBarColor;
+
+& .sidenav-button{
+  position: relative;
+  top:0em;
+  left: -.3em;
+padding: -9px -9px -8px -9px;
+
+}
+
+& .button-setting{
+position: absolute;
+right: 1.5em;
+cursor: pointer;
+  }
+
+  & .button-help{
+    position: absolute;
+    right: 4.5em;
+    cursor: pointer;
+    }
+
+    & .button-msg{
+      position: absolute;
+      right: 7.5em;
+      cursor: pointer;
+      }
+
+      & .button-search{
+        position: absolute;
+        right: 10.5em;
+        cursor: pointer;
+        }
+}
+
+.main-content{
+height: 50px;
+position: relative;
+}
+
+.help-content{
+  right:0px;
+  height: 100%;
+  width: 320px;
+  position: absolute;
+  top:0px;
+  width: 200px;
+  background-color: #f1f1f1;
+
+  & .help-header{
+    background-color: #edc9df;
+    width: 200px;
+    height: 54px;
+    text-align: center;
+  }
+
+  & .help-logo{
+  color: #7d1e62;
+  display: inline;
+  position: relative;
+  top: .4em;
+  font-size: 30px;
+  }
+
+  & h4{
+    color: #7d1e62;
+    display: inline;
+    position: relative;
+    top: .2em;
+    left: .1em;
+    font-size: 24px;
+    font-family: NotoBold;
+  }
+}
+
+  .msg-content{
+    right:0px;
+    height: 100%;
+    position: absolute;
+    top:0px;
+    width: 200px;
+    background-color: #f7f7f7;
+  
+    & .msg-header{
+      background-color: #f1f1f1;
+      width: 200px;
+      height: 54px;
+      text-align: center;
+
+      & span{
+        font-size: 12px;
+        font-family: NotoMed;
+      }
+    }
+
+    & .label_search-msg{
+      position: relative;
+    }
+    
+    & .label_search-msg:before {
+      content: "";
+      position: absolute;
+      right: 10px;
+      top: 0;
+      bottom: 0;
+      width: 20px;
+      background: url("../../../svg/search.svg") center / contain no-repeat;
+    } 
+
+    & .input_header-msg{
+      margin-top: 1em;
+      width: 172px;
+      height: 30px;
+      border-color: #e5e5e5;
+      outline: none;
+      border: none;
+    }
+
+    ::placeholder{
+      color:#cccccc;
+    }
+
+  }
+
+  .user-msg{
+    height: 3em;
+    position: relative;
+
+    &:hover{
+      cursor: pointer;
+      background-color: #f1f1f1;
+    }
+
+    & mat-icon{
+      color: black;
+      margin-left: -3.5em;
+      margin-top: .5em;
+    }
+
+    & span{
+      color: #949494;
+      position: relative;
+      top: -.6em;
+      left: .5em;
+    }
+
+    & .green{
+      background-color: green;
+      border-radius: 50%;
+      width: 5px;
+      height: 5px;
+      position: absolute;
+      top: 1.3em;
+      right: 1.5em;
+    }
+  }
+
+  .before-footer{
+    background-color: #cfcfcf;
+    width: 100%;
+    height: .1em;
+  }
+
+  footer{
+    padding:11px 17px 13px 15px;
+    background-color: $iconColor;
+    & p{
+      color: #cfcfcf;
+      margin-top: -.1em;
+      font-size: 24px;
+      font-family: NotoMed;
+    }
+  }
+
+  .under-toolbar{
+    background-color: #7d1e62;
+    height:.5em;
+  }
+
+.list-item-icon{
+height: 432px;
+max-width: 300px;
+min-width: 34px;
+
+& mat-icon{
+  width: 25px;
+  height: 25px;
+  margin-right: .5em;
+  }
+
+  & span{
+    font-size: 14px;
+    font-family: NotoBold;
+  }
+}
+
+.showClass{
+  background-color: #a4226f;
+  border-bottom: white .3em solid;
+}
+
+.showMainList{
+  background-color: #a4226f;
+  border-left: white .3em solid;
+}
+
+.msgs-content{
+  right:200px;
+  height: 350px;
+  position: absolute;
+  bottom:0px;
+  width: 263px;
+  background-color: $iconColor;
+
+  & .msgs-header{
+    background-color: $iconColor;
+    width: 263px;
+    height: 54px;
+
+    & mat-icon{
+      color: black;
+      margin-left: .5em;
+      margin-top: .8em;
+    }
+
+    & span{
+      color: black;
+      position: relative;
+      top: -.8em;
+      left: .5em;
+      font-size: 12px;
+      font-family: NotoMed;
+    }
+
+    & .close{
+      width: 5px;
+      height: 5px;
+      position: absolute;
+      right: 1.3em;
+      top: -.1em;
+
+      &:hover{
+        color: red;
+        cursor: pointer;
+      }
+    }
+
+    & mat-divider{
+      background-color: #f9f9f9;
+      height: .15em;
+    }
+
+  }
+
+  & .msgs-page{
+    overflow-y: auto;
+    overflow-x:hidden;
+    height: 250px;
+  }
+
+  & .msgs-footer{
+    background-color: #f1f1f1;
+    width: 260px;
+    height: 44px;
+    outline: none;
+    border: none;
+    position: absolute;
+    bottom: 0px;
+    color: #8d8d8d;
+
+    & .label-send {
+      position: relative;
+    }
+    
+    & .label-send:before {
+      content: "";
+      position: absolute;
+      right: -1px;
+      top: 0;
+      width: 20px;
+      color: black;
+       background: url("../../../svg/send.svg") center / contain no-repeat;
+    }
+
+  }
+  
+  input[type="text"]::placeholder{
+    position: relative;
+    left: 1em;
+    color:#8d8d8d;
+  }
+
+}
+
+main{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: .5em;
+}
+
+   .card{
+    background-color: #f7f7f7;
+    flex: 1 0 calc(33.3% - $number);
+    margin: 5px;
+    display: inline-flex;
+    width: 243px;
+    height: 148px;
+    border-radius: 1em;
+    border-color: #ebebeb;
+    transition: all 0.2s ease-in-out;
+
+    &:hover{
+      cursor: pointer;
+      box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+      fill: rgb(105, 103, 103);
+      border-width: 1em;
+    }
+   }
+    .mat{
+      color: #444444;
+      font-size: 30px;
+      margin-left: .4em;
+      margin-top: 1em;
+    }
+    
+    .h1{
+      color: black;
+      font-size: 34px;
+      font-family: NotoMed;
+      margin-top: .8em;
+  }
+
+   .p{
+    color: black;
+    font-size: 12px;
+    font-family: NotoReg;
+    }
+
+    @media screen and (max-width: 900px) {
+      main{
+        width: 100%;
+        flex-direction: column;
+      }
+      .card{
+        width: 90%;
+        margin-bottom: 1em;
+      }
+
+      .msgs-content{
+       right: 1px;
+      }
+
+    }
+
+    mat-accordion{
+      position: absolute;
+      right: 10em;
+
+      & mat-expansion-panel{
+      background-color: $navBarColor;
+      color: $iconColor;
+      }
+
+      & mat-panel-title{
+        color: $iconColor;
+        margin-top: 1em;
+        & p{
+          font-size: 12px;
+          margin-left: .3em;
+          margin-top: -.3em;
+          font-family: NotoMed;
+        }
+      }
+    }
